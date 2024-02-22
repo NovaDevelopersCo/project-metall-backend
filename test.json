@@ -1,0 +1,197 @@
+{
+    "meta": {
+        "total": 2,
+        "perPage": 10,
+        "page": 1,
+        "direction": "asc",
+        "sortBy": "title"
+    },
+    "records": [
+        {
+            "params": {
+                "_id": "65d73e156329f12516c79dce",
+                "title": "Cucumber",
+                "price": 340,
+                "description": "Very best product",
+                "image": "",
+                "count": 0,
+                "__v": 0
+            },
+            "populated": {},
+            "baseError": null,
+            "errors": {},
+            "id": "65d73e156329f12516c79dce",
+            "title": "Cucumber",
+            "recordActions": [
+                {
+                    "name": "show",
+                    "actionType": "record",
+                    "icon": "Monitor",
+                    "label": "show",
+                    "resourceId": "CardProduct",
+                    "guard": "",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "showInDrawer": false,
+                    "hideActionHeader": false,
+                    "containerWidth": 1,
+                    "layout": null,
+                    "variant": "default",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                },
+                {
+                    "name": "edit",
+                    "actionType": "record",
+                    "icon": "Edit",
+                    "label": "edit",
+                    "resourceId": "CardProduct",
+                    "guard": "",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "showInDrawer": false,
+                    "hideActionHeader": false,
+                    "containerWidth": 1,
+                    "layout": null,
+                    "variant": "default",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                },
+                {
+                    "name": "delete",
+                    "actionType": "record",
+                    "icon": "Trash2",
+                    "label": "delete",
+                    "resourceId": "CardProduct",
+                    "guard": "confirmDelete",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "component": false,
+                    "showInDrawer": false,
+                    "hideActionHeader": false,
+                    "containerWidth": 1,
+                    "layout": null,
+                    "variant": "danger",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                }
+            ],
+            "bulkActions": [
+                {
+                    "name": "bulkDelete",
+                    "actionType": "bulk",
+                    "icon": "Trash2",
+                    "label": "bulkDelete",
+                    "resourceId": "CardProduct",
+                    "guard": "",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "showInDrawer": true,
+                    "hideActionHeader": false,
+                    "containerWidth": "500px",
+                    "layout": null,
+                    "variant": "danger",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                }
+            ]
+        },
+        {
+            "params": {
+                "_id": "65d73cbf6329f12516c79dbb",
+                "title": "Tomato",
+                "price": 450,
+                "description": "Very great product!",
+                "image": "",
+                "count": 0,
+                "__v": 0
+            },
+            "populated": {},
+            "baseError": null,
+            "errors": {},
+            "id": "65d73cbf6329f12516c79dbb",
+            "title": "Tomato",
+            "recordActions": [
+                {
+                    "name": "show",
+                    "actionType": "record",
+                    "icon": "Monitor",
+                    "label": "show",
+                    "resourceId": "CardProduct",
+                    "guard": "",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "showInDrawer": false,
+                    "hideActionHeader": false,
+                    "containerWidth": 1,
+                    "layout": null,
+                    "variant": "default",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                },
+                {
+                    "name": "edit",
+                    "actionType": "record",
+                    "icon": "Edit",
+                    "label": "edit",
+                    "resourceId": "CardProduct",
+                    "guard": "",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "showInDrawer": false,
+                    "hideActionHeader": false,
+                    "containerWidth": 1,
+                    "layout": null,
+                    "variant": "default",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                },
+                {
+                    "name": "delete",
+                    "actionType": "record",
+                    "icon": "Trash2",
+                    "label": "delete",
+                    "resourceId": "CardProduct",
+                    "guard": "confirmDelete",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "component": false,
+                    "showInDrawer": false,
+                    "hideActionHeader": false,
+                    "containerWidth": 1,
+                    "layout": null,
+                    "variant": "danger",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                }
+            ],
+            "bulkActions": [
+                {
+                    "name": "bulkDelete",
+                    "actionType": "bulk",
+                    "icon": "Trash2",
+                    "label": "bulkDelete",
+                    "resourceId": "CardProduct",
+                    "guard": "",
+                    "showFilter": false,
+                    "showResourceActions": true,
+                    "showInDrawer": true,
+                    "hideActionHeader": false,
+                    "containerWidth": "500px",
+                    "layout": null,
+                    "variant": "danger",
+                    "parent": null,
+                    "hasHandler": true,
+                    "custom": {}
+                }
+            ]
+        }
+    ]
+}
