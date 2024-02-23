@@ -1,21 +1,17 @@
-import React, { useState, useEffect, ChangeEvent, useRef } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 
-import type { TComponentProps } from '../types.js';
+import type { BasePropertyProps } from 'adminjs';
 
-const EditAdvantageImage = ({ onChange, record }: TComponentProps) => {
-  const [activeUrl, setActiveUrl] = useState<string>(
+import { Image } from './Image.js';
+
+const EditAdvantageImage = ({ onChange, record }: BasePropertyProps) => {
+  const activeUrl =
     record.params.image ||
-      'https://i.pinimg.com/736x/e0/9e/cd/e09ecda9147860599156aeb741451bf2--treehouses-food-networktrisha.jpg'
-  );
+    'https://i.pinimg.com/736x/e0/9e/cd/e09ecda9147860599156aeb741451bf2--treehouses-food-networktrisha.jpg';
 
   const [uploadedUrl, setUploadedUrl] = useState<string>('');
 
-  const imageInputRef = useRef<HTMLInputElement | null>(null);
-
-  const deleteImage = () => {
-    setUploadedUrl('');
-    imageInputRef.current.value = null;
-  };
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const changeImage = (e: ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files || !e.target.files[0]) return;
@@ -28,16 +24,11 @@ const EditAdvantageImage = ({ onChange, record }: TComponentProps) => {
         <span>*</span>
         Image
       </label>
-      <img src={uploadedUrl || activeUrl} alt="product" className="image-preview" />
-      <div className="buttons-container">
-        <label htmlFor="#get-image" className="image-button image-upload-button">
-          Upload
-        </label>
-        <button onClick={deleteImage} type="button" className="image-button image-delete-button">
-          Delete
-        </button>
-      </div>
-      <input ref={imageInputRef} className="image-input" type="file" id="#get-image" onChange={changeImage} />
+      <Image isLoading={isLoading} uploadedUrl={uploadedUrl} activeUrl={activeUrl} />
+      <label htmlFor="#get-image" className={isLoading ? 'image-button image-button-loading' : 'image-button'}>
+        Upload
+      </label>
+      <input className="image-input" type="file" id="#get-image" onChange={changeImage} />
     </section>
   );
 };
