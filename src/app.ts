@@ -6,7 +6,10 @@ import provider from './admin/auth-provider.js';
 import options from './admin/options.js';
 import initializeDb from './db/index.js';
 
+import * as url from 'url';
+
 import { appRouter } from './router.js';
+import path from 'path';
 
 const port = process.env.PORT || 3000;
 
@@ -38,6 +41,9 @@ const start = async () => {
     }
   );
 
+  const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+  app.use('/static', express.static(path.join(__dirname, '../public')));
   app.use(admin.options.rootPath, router);
   app.use('/api', appRouter);
 
