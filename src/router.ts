@@ -9,6 +9,8 @@ const productsController = new CardProductController();
 const appRouter = Router();
 
 appRouter.get('/advantages', advantagesController.getAllAdvantages);
+appRouter.post('/advantages/image', advantagesController.uploadImage);
 appRouter.get('/products', productsController.getAllProducts);
+appRouter.post('/products/image', productsController.uploadImage);
 
 export { appRouter };

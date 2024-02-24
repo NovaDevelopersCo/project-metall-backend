@@ -4,11 +4,10 @@ import type { BasePropertyProps } from 'adminjs';
 
 import { Image } from './Image.js';
 
-const EditProductImage = ({ record }: BasePropertyProps) => {
-  const [activeUrl, setActiveUrl] = useState<string>(
-    record.params.image ||
-      'https://i.pinimg.com/736x/e0/9e/cd/e09ecda9147860599156aeb741451bf2--treehouses-food-networktrisha.jpg'
-  );
+import { uploadImage } from '../api/uploadImage.js';
+
+const EditProductImage = (props: BasePropertyProps) => {
+  const [imageUrl, setImageUrl] = useState<string>(props.record.params.image);
 
   const [uploadedUrl, setUploadedUrl] = useState<string>('');
 
@@ -17,6 +16,7 @@ const EditProductImage = ({ record }: BasePropertyProps) => {
   const changeImage = (e: ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files || !e.target.files[0]) return;
     setUploadedUrl(URL.createObjectURL(e.target.files[0]));
+    uploadImage(e.target.files[0], setIsLoading, setImageUrl, setUploadedUrl, props, 'product');
   };
 
   return (
@@ -25,7 +25,7 @@ const EditProductImage = ({ record }: BasePropertyProps) => {
         <span>*</span>
         Image
       </label>
-      <Image isLoading={isLoading} uploadedUrl={uploadedUrl} activeUrl={activeUrl} />
+      <Image isLoading={isLoading} uploadedUrl={uploadedUrl} activeUrl={imageUrl} />
       <label htmlFor="#get-image" className={isLoading ? 'image-button image-button-loading' : 'image-button'}>
         Upload
       </label>
