@@ -1,0 +1,26 @@
+name: Metall-BUILD
+
+on:
+  push:
+    branches: ['develop']
+  pull_request:
+    branches: ['develop']
+
+env:
+  LOGIN: ${{secrets.DOCKER_LOGIN}}
+  PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+  CLIENT_NAME: ${{secrets.CLIENT_NAME}}
+  SERVER_NAME: ${{secrets.SERVER_NAME}}
+
+jobs:
+  server_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: login to docker
+        run: |
+          docker login -u ${{env.LOGIN}} -p ${{env.PASSWORD}}
+      - name: build image
+        run: docker build -t ${{env.LOGIN}}/${{env.SERVER_NAME}}:deploy -f Dockerfile .
+      - name: push build
+        run: docker push ${{env.LOGIN}}/${{env.SERVER_NAME}}:deploy
