@@ -7,7 +7,9 @@ import { uploadImage } from '../services/uploadImage.js';
 export class CardAdvantageController {
   async getAllAdvantages(req: Request, res: Response, next: NextFunction) {
     try {
-      const allCards = await CardAdvantageModel.find();
+      const cards = await CardAdvantageModel.find();
+
+      return res.json({ cards });
     } catch (e) {
       next(e);
     }

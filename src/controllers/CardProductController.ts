@@ -7,7 +7,9 @@ import { uploadImage } from '../services/uploadImage.js';
 export class CardProductController {
   async getAllProducts(req: Request, res: Response, next: NextFunction) {
     try {
-      const allProducts = await CardProductModel.find();
+      const products = await CardProductModel.find();
+
+      return res.json({ products });
     } catch (e) {
       next(e);
     }

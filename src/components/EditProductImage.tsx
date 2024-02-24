@@ -25,7 +25,7 @@ const EditProductImage = (props: BasePropertyProps) => {
         <span>*</span>
         Image
       </label>
-      <Image isLoading={isLoading} uploadedUrl={uploadedUrl} activeUrl={imageUrl} />
+      {(imageUrl || uploadedUrl) && <Image isLoading={isLoading} uploadedUrl={uploadedUrl} activeUrl={imageUrl} />}
       <label htmlFor="#get-image" className={isLoading ? 'image-button image-button-loading' : 'image-button'}>
         Upload
       </label>
