@@ -17,7 +17,7 @@ export const uploadImage = async (
 
   setIsLoading(true);
   $api
-    .post<{ image: string }>(`/${entity === 'advantage' ? 'advantages' : 'products'}/image`, {
+    .post<{ image: string }>(`/${entity === 'advantage' ? 'advantages' : 'products'}/upload`, {
       image: convertedFile,
       name: record.params.title,
     })

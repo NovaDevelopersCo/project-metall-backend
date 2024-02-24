@@ -24,11 +24,4 @@ export class CardProductController {
       next(e);
     }
   }
-
-  async deleteImage(req: Request, res: Response, next: NextFunction) {
-    try {
-    } catch (e) {
-      next(e);
-    }
-  }
 }

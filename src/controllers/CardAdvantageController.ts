@@ -21,14 +21,6 @@ export class CardAdvantageController {
 
       return res.json({ image: secure_url });
     } catch (e) {
-      console.log(e);
-      next(e);
-    }
-  }
-
-  async deleteImage(req: Request, res: Response, next: NextFunction) {
-    try {
-    } catch (e) {
       next(e);
     }
   }
